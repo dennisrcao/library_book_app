@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>My Book Library</title>
+  </head>
+  
+  <body>
+    <header>
+      <img src="images/book-flipping.gif" /></div>
+      <h1>Welcome to Your Book Library</h1>
+      <img src="images/book-flipping.gif" />
+    </header>
+    
+    <button data-popup-target ="#popup" id="new-book">+</button>
+    <div class ="overlay"></div>
+    <div class="bookshelf"></div>
+
+    <div class ="popup" id="popup">
+        <div class ="popup-header">
+             <div class = "title"> Enter Book</div>
+              <button data-close-button class = "close-button"> &times;</button><!-- this is our x close button -->
+        </div>
+
+        <div class = "popup-body">
+             <form id="form" action="/" method="GET">
+                <label for="title">Title:</label>
+                <input
+                  type="text"
+                  id="title"
+                  name="title"
+                  placeholder="Infinite Jest"
+                  autocomplete="off"
+                  required
+                /><br />
+                <label for="author">Author:</label>
+                <input
+                  type="text"
+                  id="author"
+                  name="author"
+                  placeholder="David Foster Wallace"
+                  autocomplete="off"
+                  required
+                /><br />
+                <label for="pages">Number of pages:</label>
+                <input
+                  type="number"
+                  id="pages"
+                  name="pages"
+                  placeholder="1079"
+                  autocomplete="off"
+                  required
+                /><br />
+                <label for="read">Read the book?</label><br />
+                <select name="read" id="read">
+                  <option value="Yes">Yes 😃</option>
+                  <option value="No">No 😢</option>
+                </select>
+                <br />
+                <input type="submit" value="Submit" />
+            </form>
+
+        
+        </div>
+        <div class="active" id = "overlay"> </div>
+        <div class="bookshelf"></div>
+    </div>
+    <footer>
+      <div class="oldschool">
+        <img src="images/counter.gif" />
+        <img src="images/ns_logo.gif" />
+        <a onclick="ieAlert()"><img src="images/ie_logo.gif" /></a>
+        <img src="images/noframes.gif" />
+        <a onclick="vscode()"><img src="images/notepad.gif" /></a>
+      </div>
+
+      <div class="links">
+        <img src="images/librarian_handsyoubook.gif" />
+        <img src="images/librarian_stack.gif" />
+        <img src="images/librarian_walking.gif" />
+        <img src="images/librarian_stack.gif" />
+        <img src="images/librarian_handsyoubook.gif" />
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="customJS.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,282 @@
+body {
+  background-image: url("images/background.gif");
+  background-size: auto;
+  /* margin: auto; */
+  width: 100%;
+}
+
+header {
+  background-image: linear-gradient(red, yellow);
+  display: flex;
+  justify-content: center;
+}
+
+header > img {
+  height: 75px;
+}
+
+h1 {
+  font-family: Monospace;
+  color: gray;
+  margin: 10px;
+}
+
+.dancingbaby {
+  display: flex;
+  justify-content: center;
+}
+
+.anime {
+  display: flex;
+  justify-content: space-around;
+}
+
+.anime > img {
+  margin: auto;
+  height: 150px;
+  width: auto;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 60px; /* Height of the footer */
+  align-items: center;
+  justify-content: center;
+}
+
+.oldschool {
+  padding: 10px;
+  display: flex;
+}
+
+.oldschool > a {
+  cursor: pointer;
+}
+
+.links {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.links > img,
+.links > a > img {
+  height: 75px;
+}
+
+.links > a {
+  font-family: Monospace;
+  color: white;
+  font-size: 20px;
+  line-height: 75px;
+}
+
+.blink {
+  animation: blinker 1s linear infinite;
+  color: white;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+    -webkit-transform: rotateY(-360deg);
+    -moz-transform: rotateY(-360deg);
+    -ms-transform: rotateY(-360deg);
+    -o-transform: rotateY(-360deg);
+  }
+}
+
+#new-book {
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /*makes it a circle */
+  cursor: pointer;
+  color: white;
+  background: blue;
+  transition: 0.5s ease;
+  position: fixed;
+  z-index: 1; /*bring in front of footer section */
+  bottom: 5%;
+  right: 5%;
+}
+
+/*for popup */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0); /*-50 percent in x and y direction */
+  transition: 200 ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10; /*draw above everything else */
+  background-color: white;
+  width: 200px;
+  max-width: 50%;
+}
+
+.popup.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.popup-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.popup-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  z-index: 3;
+}
+
+.popup-body {
+  padding: 10px 15px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+html {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.bookshelf {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1;
+  max-width: 1000;
+  position: absolute;
+  top: 12%;
+  left: 15%;
+  margin: 2rem;
+}
+
+.book {
+  width: 250px;
+  height: 300px;
+  border-radius: 5px;
+  margin: 2rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s ease;
+  background: white;
+}
+
+.book:hover {
+  box-shadow: 3px 3px 30px 10px rgba(0, 0, 0, 0.15);
+}
+
+.book h2 {
+  background: blue;
+  color: white;
+  padding: 0.5rem 0;
+  margin: -0.5rem 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.book h3 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.book h3 {
+  margin: 1rem;
+}
+
+.book .trash,
+.book .update {
+  outline: none;
+  border: none;
+  width: 100%;
+  display: inline-block;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.book .update {
+  background: rgb(35, 255, 171);
+  color: blue;
+  position: relative;
+  top: 40px;
+}
+
+.book .trash {
+  background: blue;
+  color: white;
+  position: relative;
+  top: 40px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+@media screen and (max-width: 360px) {
+  #popup #container {
+    width: 260px;
+    padding-top: 10px;
+  }
+
+  #container h1 {
+    font-size: 32px;
+  }
+
+  #container .close {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #container {
+    width: 320px;
+  }
+
+  #container h1 {
+    font-size: 36px;
+  }
+
+  #container .close {
+    font-size: 32px;
+  }
+}
